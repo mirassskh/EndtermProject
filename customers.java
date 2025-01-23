@@ -3,7 +3,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class PostgreSQLExample {
+public class customers {
     public static void main(String[] args) {
         String url = "jdbc:postgresql://localhost:5432/shop"; // замени на свое
         String user = "postgres"; // твой логин
