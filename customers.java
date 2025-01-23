@@ -5,16 +5,15 @@ import java.sql.SQLException;
 
 public class customers {
     public static void main(String[] args) {
-        String url = "jdbc:postgresql://localhost:5432/shop"; // замени на свое
-        String user = "postgres"; // твой логин
-        String password = "123456"; // твой пароль
+        String url = "jdbc:postgresql://localhost:5432/shop";
+        String user = "postgres";
+        String password = "123456";
 
         String insertQuery = "INSERT INTO customers (customer_id, name, phone, email) VALUES (?, ?, ?, ?)";
 
         try (Connection connection = DriverManager.getConnection(url, user, password);
              PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
 
-            // установка значений для первого вставляемого клиента
             preparedStatement.setInt(1, 1); // customer_id
             preparedStatement.setString(2, "алихан"); // name
             preparedStatement.setString(3, "1234567890"); // phone
